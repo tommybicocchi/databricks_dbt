@@ -1,0 +1,17 @@
+version: 2
+
+# learn more about sources in https://docs.getdbt.com/reference/source-properties
+sources:
+  - name: sales
+    catalog: samples
+    schema: bakehouse
+    
+    tables:
+      - name: sales_customers
+        identifier: sales_customers
+
+      - name: sales_franchises
+        identifier: sales_franchises
+
+      - name: sales_transactions
+        identifier: sales_transactions
