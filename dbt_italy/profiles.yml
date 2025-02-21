@@ -1,0 +1,12 @@
+dbt_italy:
+
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: "{{ env_var('CATALOG') }}"
+      schema: "{{ env_var('SCHEMA') }}"
+      host: "{{ env_var('HOST') }}"
+      http_path: "{{ env_var('HTTP_PATH') }}"
+      token: "{{ env_var('TOKEN') }}"
+      threads: 1
