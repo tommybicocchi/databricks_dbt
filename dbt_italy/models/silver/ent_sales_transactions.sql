@@ -1,6 +1,7 @@
 {{
     config({
         "materialized" : "incremental",
+        "tags" : ["silver", "sales"],
         "file_format" : "delta",
         "unique_key" : "id_source_system_transaction_id",
         "incremental_strategy" : "merge"

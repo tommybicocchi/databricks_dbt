@@ -1,6 +1,7 @@
 {{
     config({
         "materialized" : "incremental",
+        "tags" : ["bronze", "sales"],
         "file_format" : "delta",
         "incremental_strategy" : "append"
     })
