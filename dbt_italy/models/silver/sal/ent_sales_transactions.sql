@@ -9,7 +9,6 @@
 }}
 
 SELECT
-    x
     transac.transactionID AS id_source_system_transaction_id,
     transac.customerID AS cd_customer_code,
     transac.franchiseID AS cd_franchise_code,

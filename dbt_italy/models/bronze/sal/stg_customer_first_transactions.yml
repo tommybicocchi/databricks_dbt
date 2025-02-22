@@ -1,0 +1,26 @@
+
+version: 2
+
+models:
+  - name: stg_customer_first_transactions
+    config:
+      catalog: bronze
+      schema: sal
+      filename: "{{ var('filename') }}"
+      
+    description: "A starter dbt model"
+    columns:
+      - name: row_id
+        data_type: long 
+        data_tests:
+          - unique
+          - not_null
+
+      - name: group_id
+        data_type: long
+
+      - name: row_key
+        data_type: string
+
+      - name: row_value
+        data_type: string
