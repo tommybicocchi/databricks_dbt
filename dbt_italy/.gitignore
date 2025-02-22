@@ -1,5 +1,5 @@
-env/
+../env/
 target/
 dbt_packages/
-logs/
-.env
+../logs/
+../.env
