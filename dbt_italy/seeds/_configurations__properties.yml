@@ -1,0 +1,13 @@
+version: 2
+
+seeds:
+  - name: cfg_dbt_ingestion_settings
+    config:
+      header: true
+      delimiter: ';'
+      column_types: {
+        id_dbt_ingestion_flow_id: long,
+        gn_volume_name: string,
+        gn_volume_nested_folder_name: string,
+        gn_format_type: string
+      }

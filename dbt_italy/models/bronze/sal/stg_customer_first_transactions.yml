@@ -6,21 +6,29 @@ models:
     config:
       catalog: bronze
       schema: sal
-      filename: "{{ var('filename') }}"
       
     description: "A starter dbt model"
     columns:
-      - name: row_id
+      - name: id_row_id
         data_type: long 
         data_tests:
           - unique
           - not_null
 
-      - name: group_id
+      - name: id_group_id
         data_type: long
 
-      - name: row_key
+      - name: gn_row_key
         data_type: string
 
-      - name: row_value
+      - name: gn_row_value
         data_type: string
+
+      - name: gn_file_path
+        data_type: string
+
+      - name: gn_file_name
+        data_type: string
+
+      - name: dt_file_modification_timestamp
+        data_type: timestamp

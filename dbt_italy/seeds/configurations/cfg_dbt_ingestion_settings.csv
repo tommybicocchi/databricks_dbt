@@ -1,0 +1,2 @@
+id_dbt_ingestion_flow_id;gn_volume_name;gn_volume_nested_folder_name;gn_format_type
+1;_bronze__sources;CUSTOMERS_FIRST;txt
