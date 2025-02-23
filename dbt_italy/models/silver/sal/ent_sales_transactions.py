@@ -36,7 +36,7 @@ def model(dbt, session):
                 'cd_customer_code',
                 'NULL AS gn_customer_name',
                 '"RETAIL" AS gn_source_system_name',
-                'dt_source_system_ingestion_timestamp AS dt_ingestion_timestamp'
+                'dt_ingestion_timestamp'
             )
         )
         .distinct()

@@ -9,7 +9,7 @@ models:
       
     description: "A starter dbt model"
     columns:
-      - name: id_source_system_transaction_id
+      - name: id_transaction_id
         data_type: string
         data_tests:
           - unique

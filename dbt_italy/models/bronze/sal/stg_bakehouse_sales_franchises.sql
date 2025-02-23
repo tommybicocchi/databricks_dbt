@@ -1,9 +1,8 @@
 {{
     config({
-        "materialized" : "incremental",
+        "materialized" : "table",
         "tags" : ["bronze", "sales"],
-        "file_format" : "delta",
-        "incremental_strategy" : "insert_overwrite"
+        "file_format" : "delta"
     })
 }}
 

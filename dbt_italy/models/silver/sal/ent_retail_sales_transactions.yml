@@ -2,10 +2,16 @@
 version: 2
 
 models:
-  - name: ent_sales_transactions
+  - name: ent_retail_sales_transactions
     config:
       catalog: silver
       schema: sal
+      on_schema_change: fail
+      contract: {enforced: true}
+
+    constrains:
+      - type: primary_key
+        columns: [id_source_system_transaction_id]
       
     description: "A starter dbt model"
     columns:
@@ -19,7 +25,10 @@ models:
         data_type: long
 
       - name: cd_customer_code
-        data_type: string
+        data_type: long
+
+      - name: cd_franchise_code
+        data_type: long
 
       - name: gn_product_name
         data_type: string
@@ -31,7 +40,7 @@ models:
         data_type: long
 
       - name: nm_total_price_number
-        data_type: string
+        data_type: long
 
       - name: gn_payment_method
         data_type: string
