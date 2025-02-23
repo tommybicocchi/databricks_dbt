@@ -20,6 +20,6 @@ SELECT
     transac.cardNumber AS gn_card_number,
     franch.city AS gn_city_name,
     transac.dateTime AS dt_source_system_ingestion_timestamp
-FROM {{ ref( 'stg_bakehouse_sales_transactions' )}} transac
+FROM {{ ref( 'stg_retail_bakehouse_sales_transactions' )}} transac
 LEFT JOIN {{ ref( 'eph_bakehouse_sales_franchises_deduplicated' )}} franch
 ON transac.franchiseID = franch.franchiseID

@@ -2,32 +2,26 @@
 version: 2
 
 models:
-  - name: stg_customer_first_transactions
+  - name: ent_sales_transactions
     config:
-      catalog: bronze
+      catalog: silver
       schema: sal
       
     description: "A starter dbt model"
     columns:
-      - name: id_row_id
-        data_type: long 
+      - name: id_source_system_transaction_id
+        data_type: string
         data_tests:
           - unique
           - not_null
 
-      - name: id_group_id
+      - name: cd_customer_code
         data_type: long
 
-      - name: gn_row_key
+      - name: gn_customer_name
         data_type: string
-
-      - name: gn_row_value
-        data_type: string
-
-      - name: gn_file_path
-        data_type: string
-
-      - name: gn_file_name
+      
+      - name: gn_source_system_name
         data_type: string
 
       - name: dt_ingestion_timestamp

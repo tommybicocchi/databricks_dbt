@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: stg_bakehouse_sales_transactions
+  - name: stg_retail_bakehouse_sales_transactions
     config:
       catalog: bronze
       schema: sal

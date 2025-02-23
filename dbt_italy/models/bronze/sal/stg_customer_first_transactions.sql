@@ -27,13 +27,13 @@ AS (
         ROW_NUMBER() OVER (ORDER BY NULL) AS id_row_id,
         _metadata.file_path AS gn_file_path,
         _metadata.file_name AS gn_file_name,
-        _metadata.file_modification_time AS dt_file_modification_timestamp
+        _metadata.file_modification_time AS dt_ingestion_timestamp
     FROM read_files(
         '/{{volume}}/{{this.database}}/{{this.schema}}/{{gn_volume_name}}/{{gn_volume_nested_folder_name}}/*.{{gn_format_type}}'
     )
     {% if is_incremental() %}
     WHERE _metadata.file_modification_time > (
-        SELECT max(dt_file_modification_timestamp) from {{ this }}
+        SELECT max(dt_ingestion_timestamp) from {{ this }}
     )
     {% endif %}
 )
@@ -44,6 +44,6 @@ SELECT
     TRIM(SPLIT(gn_txt_content, ':')[1]) AS gn_row_value,
     gn_file_path,
     gn_file_name,
-    dt_file_modification_timestamp
+    dt_ingestion_timestamp
 FROM txt_parsing
 WHERE gn_group_marker = 0
