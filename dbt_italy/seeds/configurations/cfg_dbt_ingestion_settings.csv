@@ -1,2 +1,3 @@
-id_dbt_ingestion_flow_id;gn_volume_name;gn_volume_nested_folder_name;gn_format_type
-1;_bronze__sources;CUSTOMERS_FIRST;txt
+id_dbt_ingestion_flow_id;gn_volume_name;gn_volume_nested_folder_name;gn_format_type;gn_spark_format_type;gn_csv_separator;fl_is_csv_with_header_flag
+1;_bronze__sources;CUSTOMERS_FIRST;txt;text;;
+2;_bronze__sources;CUSTOMERS_FIRST_CITIES;csv;csv;";";true

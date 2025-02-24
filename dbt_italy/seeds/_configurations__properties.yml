@@ -9,5 +9,8 @@ seeds:
         id_dbt_ingestion_flow_id: long,
         gn_volume_name: string,
         gn_volume_nested_folder_name: string,
-        gn_format_type: string
+        gn_format_type: string,
+        gn_spark_format_type: string,
+        gn_csv_separator: string,
+        fl_is_csv_with_header_flag: string
       }

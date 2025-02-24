@@ -1,0 +1,39 @@
+
+version: 2
+
+models:
+  - name: ent_customer_first_customer_city
+    config:
+      catalog: silver
+      schema: crm
+      on_schema_change: fail
+      contract: {enforced: true}
+
+    constrains:
+      - type: primary_key
+        columns: [cd_customer_code]
+      
+    description: "A starter dbt model"
+    columns:
+      - name: cd_customer_code
+        data_type: long 
+        data_tests:
+          - not_null
+
+      - name: gn_customer_name
+        data_type: string
+        data_tests:
+          - not_null
+
+      - name: gn_city_name
+        data_type: string
+        data_tests:
+          - not_null
+
+      - name: dt_last_updated_timestamp
+        data_type: timestamp
+        data_tests:
+          - not_null
+
+      - name: dt_ingestion_timestamp
+        data_type: timestamp

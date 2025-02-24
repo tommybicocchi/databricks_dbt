@@ -1,0 +1,22 @@
+
+version: 2
+
+snapshots:
+  - name: dm_customer_city
+    relation: ref('ent_customer_first_customer_city')
+
+    config:
+      catalog: gold
+      schema: crm
+      strategy: check
+      unique_key: cd_customer_code
+      check_cols: ["gn_city_name"]
+      updated_at: dt_last_updated_timestamp
+      hard_deletes: invalidate
+      file_format: delta
+      snapshot_meta_column_names:
+        dbt_valid_from: dt_valid_from_timestamp
+        dbt_valid_to: dt_valid_to_timestamp
+        dbt_scd_id: sk_cd_customer_code_gn_city_name
+        dbt_updated_at: dt_updated_at_timestamp
+        dbt_is_deleted: fl_is_deleted_flag

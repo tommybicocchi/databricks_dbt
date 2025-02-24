@@ -37,6 +37,14 @@ models:
           format: txt
           folder: CUSTOMERS_FIRST
 
+  elementary:
+    +catalog: bronze
+    +schema: elementary
+
+flags:
+  require_explicit_package_overrides_for_builtin_materializations: false
+  source_freshness_run_project_hooks: True
+
 seeds:
   catalog: bronze
   schema: configurations

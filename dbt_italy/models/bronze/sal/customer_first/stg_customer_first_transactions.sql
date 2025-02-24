@@ -15,6 +15,7 @@
 {% set gn_volume_name = dbt_ingestion_settings.gn_volume_name %}
 {% set gn_volume_nested_folder_name = dbt_ingestion_settings.gn_volume_nested_folder_name %}
 {% set gn_format_type = dbt_ingestion_settings.gn_format_type %}
+{% set gn_spark_format_type = dbt_ingestion_settings.gn_spark_format_type %}
 
 WITH txt_parsing
 AS (
@@ -29,7 +30,8 @@ AS (
         _metadata.file_name AS gn_file_name,
         _metadata.file_modification_time AS dt_ingestion_timestamp
     FROM read_files(
-        '/{{volume}}/{{this.database}}/{{this.schema}}/{{gn_volume_name}}/{{gn_volume_nested_folder_name}}/*.{{gn_format_type}}'
+        '/{{volume}}/{{this.database}}/{{this.schema}}/{{gn_volume_name}}/{{gn_volume_nested_folder_name}}/*.{{gn_format_type}}',
+        format => '{{gn_spark_format_type}}'
     )
     {% if is_incremental() %}
     WHERE _metadata.file_modification_time > (

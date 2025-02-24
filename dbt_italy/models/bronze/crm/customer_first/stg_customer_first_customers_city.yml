@@ -1,0 +1,39 @@
+
+version: 2
+
+models:
+  - name: stg_customer_first_customers_city
+    config:
+      catalog: bronze
+      schema: crm
+      
+    description: "A starter dbt model"
+    columns:
+      - name: customer_id
+        data_type: long 
+        data_tests:
+          - not_null
+
+      - name: customer_name
+        data_type: string
+        data_tests:
+          - not_null
+
+      - name: city
+        data_type: string
+        data_tests:
+          - not_null
+
+      - name: last_updated
+        data_type: timestamp
+        data_tests:
+          - not_null
+
+      - name: gn_file_path
+        data_type: string
+
+      - name: gn_file_name
+        data_type: string
+
+      - name: dt_ingestion_timestamp
+        data_type: timestamp

@@ -1,6 +1,6 @@
 def model(dbt, session):
     dbt.config(
-        materialized="incremental",
+        materialized="table",
         submission_method="serverless_cluster"
     )
     
@@ -38,8 +38,8 @@ def model(dbt, session):
                 '"RETAIL" AS gn_source_system_name',
                 'dt_ingestion_timestamp'
             )
+            .distinct()
         )
-        .distinct()
     )
     
     return all_transactions

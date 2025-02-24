@@ -3,3 +3,4 @@ dbt_italy/target/
 dbt_italy/dbt_packages/
 logs/
 .env
+edr_target
