@@ -21,7 +21,7 @@ AS (
     SELECT
         value AS gn_txt_content,
         CASE
-            WHEN value LIKE '%---%' THEN 1
+            WHEN upper(trim(value)) LIKE '%CUSTOMER_ID%' THEN 1
             ELSE 0
         END AS gn_group_marker,
         ROW_NUMBER() OVER (ORDER BY NULL) AS id_row_id,
