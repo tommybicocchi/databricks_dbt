@@ -46,4 +46,4 @@ SELECT
     gn_file_name,
     dt_ingestion_timestamp
 FROM txt_parsing
-WHERE gn_group_marker = 0
+WHERE TRIM(UPPER(gn_txt_content)) NOT LIKE '%---%'
