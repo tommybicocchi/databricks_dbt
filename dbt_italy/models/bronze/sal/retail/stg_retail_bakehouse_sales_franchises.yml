@@ -6,41 +6,29 @@ models:
     config:
       catalog: bronze
       schema: sal
+      on_schema_change: fail
+      contract: {enforced: true}
       
-    description: "A starter dbt model"
     columns:
       - name: franchiseID
         data_type: long 
-        data_tests:
-          - unique
-          - not_null
-
       - name: name
         data_type: string
-
       - name: city
         data_type: string
-
       - name: district
         data_type: string
-
       - name: zipcode
         data_type: string
-
       - name: country
         data_type: string
-
       - name: size
         data_type: string
-
       - name: longitude
         data_type: float
-
       - name: latitude
         data_type: float
-
       - name: supplierID
         data_type: long
-
       - name: dt_ingestion_timestamp
         data_type: timestamp

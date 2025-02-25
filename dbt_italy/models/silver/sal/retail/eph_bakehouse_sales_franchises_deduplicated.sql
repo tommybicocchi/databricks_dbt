@@ -23,7 +23,7 @@ AS (
             PARTITION BY franchiseID
             ORDER BY dt_ingestion_timestamp DESC
         ) AS row_number_franchiseID
-    FROM {{ ref( 'stg_bakehouse_sales_franchises' ) }}
+    FROM {{ ref( 'stg_retail_bakehouse_sales_franchises' ) }}
 )
 SELECT
     franchiseID,

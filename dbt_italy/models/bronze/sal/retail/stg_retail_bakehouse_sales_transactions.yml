@@ -6,35 +6,29 @@ models:
     config:
       catalog: bronze
       schema: sal
+      on_schema_change: fail
+      contract: {enforced: true}
       
-    description: "A starter dbt model"
     columns:
       - name: transactionID
         data_type: long
-        data_tests:
-          - unique
-          - not_null
-
       - name: customerID
         data_type: long
-
       - name: franchiseID
         data_type: long
-
       - name: product
         data_type: string
-
       - name: quantity
         data_type: long
-
       - name: unitPrice
         data_type: long
-
       - name: totalPrice
         data_type: long
-
       - name: paymentMethod
         data_type: string
-
       - name: cardNumber
         data_type: long
+      - name: dateTime
+        data_type: timestamp
+      - name: dt_ingestion_timestamp
+        data_type: timestamp

@@ -8,32 +8,3 @@ models:
       schema: sal
       
     description: "A starter dbt model"
-    columns:
-      - name: id_row_id
-        data_type: long 
-        data_tests:
-          - not_null
-
-      - name: id_group_id
-        data_type: long
-        data_tests:
-          - not_null
-
-      - name: gn_row_key
-        data_type: string
-        data_tests:
-          - not_null
-
-      - name: gn_row_value
-        data_type: string
-        data_tests:
-          - not_null
-
-      - name: gn_file_path
-        data_type: string
-
-      - name: gn_file_name
-        data_type: string
-
-      - name: dt_ingestion_timestamp
-        data_type: timestamp

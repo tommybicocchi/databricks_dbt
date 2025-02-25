@@ -9,4 +9,4 @@
 SELECT
     *,
     CURRENT_TIMESTAMP AS dt_ingestion_timestamp
-FROM {{ source( 'sales', 'sales_transactions' ) }}
+FROM {{ source( 'sales', 'sales_franchises' ) }}
