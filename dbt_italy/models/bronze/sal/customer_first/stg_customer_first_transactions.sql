@@ -6,6 +6,7 @@
 }}
 
 SELECT
+    ROW_NUMBER() OVER ( ORDER BY NULL ) AS id_row_id,
     *,
     CURRENT_TIMESTAMP AS dt_ingestion_timestamp,
     _metadata
